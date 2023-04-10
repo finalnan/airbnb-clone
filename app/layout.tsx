@@ -8,6 +8,7 @@ import SignupModal from "./components/modals/SignupModal";
 import SigninModal from "./components/modals/SigninModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
+import RentModal from "./components/modals/RentModal";
 
 export const metadata = {
   title: "Airbnb",
@@ -32,6 +33,7 @@ export default async function RootLayout({
           <ToasterProvider />
           <SigninModal />
           <SignupModal />
+          <RentModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
         {children}

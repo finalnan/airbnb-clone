@@ -110,12 +110,12 @@ const Categories = () => {
   return (
     <Container>
       <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
-        {categories.map((item) => (
+        {categories.map((cate) => (
           <CategoryBox
-            key={item.label}
-            label={item.label}
-            selected={category === item.label}
-            icon={item.icon}
+            key={cate.label}
+            label={cate.label}
+            selected={category === cate.label}
+            icon={cate.icon}
           />
         ))}
       </div>

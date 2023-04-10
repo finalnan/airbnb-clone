@@ -1,15 +1,15 @@
 import { create } from "zustand";
 
-interface SigninModalProps {
+interface RentModalProps {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
 }
 
-const useSigninModal = create<SigninModalProps>((set) => ({
+const useRentModal = create<RentModalProps>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
-export default useSigninModal;
+export default useRentModal;
