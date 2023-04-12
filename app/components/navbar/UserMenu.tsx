@@ -11,6 +11,7 @@ import useSigninModal from "@/app/hooks/useSigninModal";
 import useRentModal from "@/app/hooks/useRentModal";
 
 import { SafeUser } from "@/app/types";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -20,6 +21,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const signinModal = useSigninModal();
   const signupModal = useSignupModal();
   const rentModal = useRentModal();
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,10 +60,34 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem onClick={toggleOpen} label="My trips" />
-                <MenuItem onClick={toggleOpen} label="My favorites" />
-                <MenuItem onClick={toggleOpen} label="My reservations" />
-                <MenuItem onClick={toggleOpen} label="My properties" />
+                <MenuItem
+                  onClick={() => {
+                    router.push("/trips");
+                    toggleOpen();
+                  }}
+                  label="My trips"
+                />
+                <MenuItem
+                  onClick={() => {
+                    router.push("/favorites");
+                    toggleOpen();
+                  }}
+                  label="My favorites"
+                />
+                <MenuItem
+                  onClick={() => {
+                    router.push("/reservations");
+                    toggleOpen();
+                  }}
+                  label="My reservations"
+                />
+                <MenuItem
+                  onClick={() => {
+                    router.push("/properties");
+                    toggleOpen();
+                  }}
+                  label="My properties"
+                />
                 <MenuItem
                   onClick={() => {
                     rentModal.onOpen();
