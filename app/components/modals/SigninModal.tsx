@@ -104,7 +104,7 @@ const SigninModal = () => {
       />
       <div className="text-neutral-500 text-center mt-2 font-light">
         <p>
-          Don't have an account?&nbsp;
+          {"Don't have an account? "}
           <span
             onClick={onToggle}
             className="text-neutral-800 curs  or-pointer hover:underline"
