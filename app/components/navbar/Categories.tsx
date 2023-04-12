@@ -14,7 +14,7 @@ import {
   GiCaveEntrance,
   GiCactus,
   GiBarn,
-} from "react-icons/Gi";
+} from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
 
 import Container from "../Container";
